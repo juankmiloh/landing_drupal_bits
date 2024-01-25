@@ -2,10 +2,34 @@ global-styling:
   version: VERSION
   js:
     js/global.js: {}
+    js/custom.js: {}
+    # js/easypiechart.min.js: {}
+    # js/header-mobile.js: {}
+    # js/jquery.countdown.min.js: {}
+    # js/jquery.isotope.min.js: {}
+    # js/jquery.magnific-popup.min.js: {}
+    # js/jquery.min.js: {}
+    # js/owl.carousel.min.js: {}
+    # js/rev-script-2.js: {}
+    # js/scripts.js: {}
+    owlcarousel2/dist/owl.carousel.min.js: {}
   css:
     component:
-      css/style.css: {}
-      css/colors.css: {}
+      # css/style.css: {}
+      # css/colors.css: {}
+      # css/estilos.css: {}
+      # css/bootstrap.min.css: {}
+      # css/flaticon.css: {}
+      # css/font-awesome.min.css: {}
+      # css/magnific-popup.css: {}
+      # css/owl.carousel.min.css: {}
+      # css/owl.theme.css: {}
+      # css/royal-preload.css: {}
+      owlcarousel2/dist/assets/owl.carousel.min.css: {}
+      owlcarousel2/dist/assets/owl.theme.default.min.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
 bootstrap:
   js:
     /libraries/popper.js/dist/umd/popper.min.js: { weight: -19 }

@@ -1,0 +1,33 @@
+{% set classes = ['paragraph', 'd-lg-flex', 'paragraph--type--' ~ (paragraph.bundle|clean_class), view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class), not paragraph.isPublished() ? 'paragraph--unpublished'] %}
+<style>
+  .container-test {
+    border: 1px solid red;
+  }
+  
+  @media (min-width: 992px) {
+    .field--name-field-imagen-producto {
+      width: 550px;
+    }
+  }
+</style>
+
+{# Enlazar el archivo CSS externo #}
+{{ attach_library('landing_theme/css/style.css') }}
+
+{% block paragraph %}
+  <div {{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="card mb-3">
+        <img src="{{ file_url(content.field_imagen_promocion[0]['#media'].field_media_image.entity.uri.value) }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          {# {{ dump(content.field_texto_titulo[0]) }} #}
+          <h5 class="card-title">{{ content.field_texto_titulo[0]['#text'] }}</h5>
+          <p class="card-text">{{ content.field_textos_promocion[0] }}</p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock %}
